@@ -1,0 +1,44 @@
+{
+  "model": "linear pinhole, no distortion coefficients estimated",
+  "board_inner_corners": [
+    8,
+    6
+  ],
+  "square_pitch_m": 0.03,
+  "subpixel_window_px": [
+    11,
+    11
+  ],
+  "software": {
+    "opencv-python-headless": "5.1.0.95",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "python": "3.12.14",
+  "inputs": {
+    "img0.jpg": "194a3678d4e2dc2cef193a7d75e135667ee73f42f5da1688bd2a5a13e92a15e7",
+    "img1.jpg": "c4f8bc527181cf6fc4cd270af32ea94b4ac18ac5a043fe6415b7de41a6b1d801",
+    "img2.jpg": "c591546a270ced7baaaa149370ffc558054a794fe4e30203417cfaf5d3a85e8f",
+    "img3.jpg": "658956bdfbea63bf24478ddb7078efcb6ef68cc43600b29b237aa14b35a5cb29",
+    "img4.jpg": "47c44bc0e6e3ea8c22e59451973aa2ec7cf9c54f5ebc784dc169ff6a86211e47",
+    "img5.jpg": "475dbf3eaa258fd39b9b4807cf03853af3b195bb7a02376303745f85ebbc14a6",
+    "img6.jpg": "8aa4e4cfc6ae02ad9fed5ac91e81b2fe1797b2fdc24c7fd16a32fea7c84405ac",
+    "img7.jpg": "590782310d7303d6094c4fcc456a975e42535fa8f6558b29e0fad0f330b44d23",
+    "img8.jpg": "63f0ce89a920c31e65c6ffb1dde64339148fa272100227149403400b0e898a8a"
+  },
+  "retained_views": [
+    "img0.jpg",
+    "img1.jpg",
+    "img2.jpg",
+    "img3.jpg",
+    "img4.jpg",
+    "img5.jpg",
+    "img6.jpg",
+    "img7.jpg",
+    "img8.jpg"
+  ],
+  "results": {
+    "calibration.json": "a8471183e4a101f26be63fa155c61365fe3c77ed25cba02222342d172a6aa167",
+    "view_errors.csv": "d50af3a4dcaddcbc132e962d845dba098d7f7c07a1084b60122169029dbeb466"
+  }
+}

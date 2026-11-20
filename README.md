@@ -1,5 +1,7 @@
 # Camera calibration for an industrial inspection station
 
+**Denos Kume · MSc Control and Robotics · Centrale Nantes**
+
 [Open the interactive HTML review](https://raw.githack.com/denoskume/camera-calibration/main/review/index.html) · [Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
 
 ## Mission
@@ -19,6 +21,14 @@ Before a fixed camera can locate features on a planar inspection fixture, an eng
 ![Mean corner reprojection error in pixels for each chessboard view](outputs/figures/mean_reprojection_error_by_view.png)
 
 The board has 8 × 6 inner corners and a square pitch of 30 mm. The notebook refines their image locations, fits a normalized DLT homography per view, solves Zhang’s constraints for the common intrinsic matrix, and recovers nine board-to-camera poses. The review lets you toggle corner overlays on every source image. The exported files contain the [camera matrix and poses](outputs/calibration.json) and [per-view measurements](outputs/view_errors.csv).
+
+## Commissioning review
+
+Open the HTML review, expand a photograph and toggle the corner overlay. Start with **img7.jpg** (0.859 px RMS), then compare it with **img1.jpg** (0.277 px RMS). Cyan circles mark measured corners and orange crosses mark model projections. Use the two views to examine how the same fitted camera behaves under different board poses.
+
+Mark each view **Reviewed** or **Investigate** and record the reason. The viewer saves drafts in the current browser and exports all nine rows to CSV. For a separate review, use the [blank worksheet](review/reader_template.csv). The [run manifest](review/run_manifest.json) records the input hashes, target geometry, software versions and result hashes.
+
+![Board and camera poses recovered from the nine views](outputs/figures/estimated_camera_poses.png)
 
 ## Experience gained
 
