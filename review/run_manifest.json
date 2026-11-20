@@ -39,6 +39,8 @@
   ],
   "results": {
     "calibration.json": "a8471183e4a101f26be63fa155c61365fe3c77ed25cba02222342d172a6aa167",
-    "view_errors.csv": "d50af3a4dcaddcbc132e962d845dba098d7f7c07a1084b60122169029dbeb466"
+    "view_errors.csv": "d50af3a4dcaddcbc132e962d845dba098d7f7c07a1084b60122169029dbeb466",
+    "held_out_view_errors.csv": "ba4ee1129c4a9927837caa6e657f23fa9927067f862191ccf06b76ca4c4e71c6",
+    "held_out_view_errors.png": "c35736e3b4bcd8f01c56d3e5232a61f77fc3c06921c5ff3d3d19dbcecd8c7a93"
   }
 }

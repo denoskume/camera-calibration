@@ -8,7 +8,7 @@
 
 Before a fixed camera can locate features on a planar inspection fixture, an engineer needs to know how board coordinates map to image pixels. This Centrale Nantes MSc case study uses Zhang’s method to estimate the camera intrinsics and the pose of a chessboard in nine laboratory photographs. The inspection station provides the industrial context.
 
-## Results
+## Fit on the nine calibration views
 
 | Measure | Result |
 |---|---:|
@@ -21,6 +21,21 @@ Before a fixed camera can locate features on a planar inspection fixture, an eng
 ![Mean corner reprojection error in pixels for each chessboard view](outputs/figures/mean_reprojection_error_by_view.png)
 
 The board has 8 × 6 inner corners and a square pitch of 30 mm. The notebook refines their image locations, fits a normalized DLT homography per view, solves Zhang’s constraints for the common intrinsic matrix, and recovers nine board-to-camera poses. The review lets you toggle corner overlays on every source image. The exported files contain the [camera matrix and poses](outputs/calibration.json) and [per-view measurements](outputs/view_errors.csv).
+
+## Predicting corners on a held-out view
+
+Fit the camera on eight images. On the ninth, use 24 alternating corners to estimate the board pose and predict the other 24. Repeat for each view, yielding 216 test corners per model.
+
+| Camera model | Pooled held-out RMS | Highest view RMS |
+|---|---:|---:|
+| Linear Zhang | 0.395 px | 0.589 px on img3.jpg |
+| Nonlinear OpenCV with lens distortion | 0.352 px | 0.521 px on img3.jpg |
+
+The refined model reduced the pooled error by 10.7% and improved all nine folds. It also changes the optimization and skew constraint, so the gain cannot be attributed solely to distortion correction. For an inspection station, this result supports testing the refined model on a dimensionally certified reference part across the working area. Production tolerances remain unverified.
+
+![Held-out prediction error by board pose](outputs/figures/held_out_view_errors.png)
+
+[Download per-view test results](outputs/held_out_view_errors.csv) · [Run the browser calibration workspace](https://raw.githack.com/denoskume/msc-coro-dassip-portfolio/main/index.html#/workspace/calibration)
 
 ## Commissioning review
 
