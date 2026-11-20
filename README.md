@@ -2,7 +2,7 @@
 
 **Denos Kume · MSc Control and Robotics · Centrale Nantes**
 
-[Open the interactive HTML review](https://raw.githack.com/denoskume/camera-calibration/main/review/index.html) · [Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
+[Explore the portfolio case study](https://raw.githack.com/denoskume/msc-coro-dassip-portfolio/main/index.html#/projects/camera-calibration) · [Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
 
 ## Mission
 
