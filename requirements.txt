@@ -1,0 +1,4 @@
+numpy==2.3.5
+matplotlib==3.10.8
+opencv-python-headless==5.1.0.95
+ipykernel==7.4.0
