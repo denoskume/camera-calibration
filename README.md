@@ -2,7 +2,7 @@
 
 **Denos Kume · Centrale Nantes**
 
-[Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
+[Open the interactive camera calibration case study](https://denoskume.github.io/portfolio/#/projects/camera-calibration) · [Read the executed notebook](Camera_Calibration.ipynb)
 
 ## Mission
 
@@ -39,9 +39,9 @@ The refined model reduced the pooled error by 10.7% and improved all nine folds.
 
 ## Commissioning review
 
-Open the HTML review, expand a photograph and toggle the corner overlay. Start with **img7.jpg** (0.859 px RMS), then compare it with **img1.jpg** (0.277 px RMS). Cyan circles mark measured corners and orange crosses mark model projections. Use the two views to examine how the same fitted camera behaves under different board poses.
+Open the interactive case study in the standalone portfolio, expand a photograph and toggle the corner overlay. Start with **img7.jpg** (0.859 px RMS), then compare it with **img1.jpg** (0.277 px RMS). Cyan circles mark measured corners and orange crosses mark model projections. Use the two views to examine how the same fitted camera behaves under different board poses.
 
-Mark each view **Reviewed** or **Investigate** and record the reason. The viewer saves drafts in the current browser and exports all nine rows to CSV. For a separate review, use the [blank worksheet](review/reader_template.csv). The [run manifest](review/run_manifest.json) records the input hashes, target geometry, software versions and result hashes.
+Mark each view **Reviewed** or **Investigate** and record the reason. The integrated reviewer saves drafts in the current browser and exports all nine rows to CSV. For a separate review, use the [blank worksheet](review/reader_template.csv). The [run manifest](review/run_manifest.json) records the input hashes, target geometry, software versions and result hashes.
 
 ![Board and camera poses recovered from the nine views](outputs/figures/estimated_camera_poses.png)
 
@@ -53,4 +53,4 @@ Mark each view **Reviewed** or **Investigate** and record the reason. The viewer
 
 ## Reproduce
 
-Download the repository ZIP and extract it. From its root, install the dependencies in a Python 3.12 environment with `python -m pip install -r requirements.txt`. Open `Camera_Calibration.ipynb` in VS Code, select that environment, and run all cells. The notebook regenerates seven diagnostic figures, the calibration parameters, both error tables and the standalone HTML viewer.
+Download the repository ZIP and extract it. From its root, install the dependencies in a Python 3.12 environment with `python -m pip install -r requirements.txt`. Open `Camera_Calibration.ipynb` in VS Code, select that environment, and run all cells. The notebook regenerates seven diagnostic figures, the calibration parameters and both error tables.
