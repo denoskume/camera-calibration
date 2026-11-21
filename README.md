@@ -1,12 +1,12 @@
 # Camera calibration for an industrial inspection station
 
-**Denos Kume · MSc Control and Robotics · Centrale Nantes**
+**Denos Kume · Centrale Nantes**
 
-[Explore the portfolio case study](https://raw.githack.com/denoskume/msc-coro-dassip-portfolio/main/index.html#/projects/camera-calibration) · [Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
+[Download the offline viewer](https://github.com/denoskume/camera-calibration/raw/refs/heads/main/review/index.html) · [Read the executed notebook](Camera_Calibration.ipynb)
 
 ## Mission
 
-Before a fixed camera can locate features on a planar inspection fixture, an engineer needs to know how board coordinates map to image pixels. This Centrale Nantes MSc case study uses Zhang’s method to estimate the camera intrinsics and the pose of a chessboard in nine laboratory photographs. The inspection station provides the industrial context.
+Before a fixed camera can locate features on a planar inspection fixture, an engineer needs to know how board coordinates map to image pixels. This project uses Zhang’s method to estimate the camera intrinsics and the pose of a chessboard in nine laboratory photographs. The inspection station provides the industrial context.
 
 ## Fit on the nine calibration views
 
@@ -35,7 +35,7 @@ The refined model reduced the pooled error by 10.7% and improved all nine folds.
 
 ![Held-out prediction error by board pose](outputs/figures/held_out_view_errors.png)
 
-[Download per-view test results](outputs/held_out_view_errors.csv) · [Run the browser calibration workspace](https://raw.githack.com/denoskume/msc-coro-dassip-portfolio/main/index.html#/workspace/calibration)
+[Download per-view test results](outputs/held_out_view_errors.csv)
 
 ## Commissioning review
 
@@ -53,6 +53,4 @@ Mark each view **Reviewed** or **Investigate** and record the reason. The viewer
 
 ## Reproduce
 
-Download the repository ZIP and extract it. From its root, install the dependencies in a Python 3.12 environment with `python -m pip install -r requirements.txt`. Open `Camera_Calibration.ipynb` in VS Code, select that environment, and run all cells. The notebook regenerates six diagnostic figures, the calibration parameters, the error table and the standalone HTML viewer.
-
-[Original MSc lab and historical materials](https://github.com/denoskume/msc-coro-dassip-portfolio/tree/0698d843d50896879ec3aec2ebae7d5a170b76c0/computer-vision/camera-calibration)
+Download the repository ZIP and extract it. From its root, install the dependencies in a Python 3.12 environment with `python -m pip install -r requirements.txt`. Open `Camera_Calibration.ipynb` in VS Code, select that environment, and run all cells. The notebook regenerates seven diagnostic figures, the calibration parameters, both error tables and the standalone HTML viewer.
