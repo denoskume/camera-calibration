@@ -1,4 +1,4 @@
-# Camera calibration for an industrial inspection station
+# Camera Calibration
 
 **Denos Kume · Centrale Nantes**
 
@@ -6,7 +6,7 @@
 
 ## Mission
 
-Before a fixed camera can locate features on a planar inspection fixture, an engineer needs to know how board coordinates map to image pixels. This project uses Zhang’s method to estimate the camera intrinsics and the pose of a chessboard in nine laboratory photographs. The inspection station provides the industrial context.
+Camera calibration estimates the parameters that map known points in a scene to their image coordinates. This academic project applies Zhang’s method to nine photographs of a planar chessboard to recover camera intrinsics and board poses, then evaluates the reprojection errors and predictions on held-out corners.
 
 ## Fit on the nine calibration views
 
@@ -31,13 +31,13 @@ Fit the camera on eight images. On the ninth, use 24 alternating corners to esti
 | Linear Zhang | 0.395 px | 0.589 px on img3.jpg |
 | Nonlinear OpenCV with lens distortion | 0.352 px | 0.521 px on img3.jpg |
 
-The refined model reduced the pooled error by 10.7% and improved all nine folds. It also changes the optimization and skew constraint, so the gain cannot be attributed solely to distortion correction. For an inspection station, this result supports testing the refined model on a dimensionally certified reference part across the working area. Production tolerances remain unverified.
+The refined model reduced the pooled error by 10.7% and improved all nine folds. It also changes the optimization and skew constraint, so the gain cannot be attributed solely to distortion correction. The result measures prediction quality on the supplied chessboard images; testing on additional image sets would help establish how consistently the model performs.
 
 ![Held-out prediction error by board pose](outputs/figures/held_out_view_errors.png)
 
 [Download per-view test results](outputs/held_out_view_errors.csv)
 
-## Commissioning review
+## Calibration review
 
 Open the interactive case study in the standalone portfolio, expand a photograph and toggle the corner overlay. Start with **img7.jpg** (0.859 px RMS), then compare it with **img1.jpg** (0.277 px RMS). Cyan circles mark measured corners and orange crosses mark model projections. Use the two views to examine how the same fitted camera behaves under different board poses.
 
@@ -49,7 +49,7 @@ Mark each view **Reviewed** or **Investigate** and record the reason. The integr
 
 - Used point normalization and singular value decomposition to estimate homographies from coordinates expressed in metres and pixels.
 - Checked recovered rotations for orthogonality and unit determinant before using them to project the board.
-- Used per-view residuals to identify the pose that warrants the closest inspection. The fitted pinhole model omits distortion. Qualifying it for dimensional inspection would require independent reference measurements and a part tolerance.
+- Used per-view residuals to identify calibration views that require closer review. The fitted linear pinhole model omits distortion; testing the estimated parameters on independent photographs would provide a stronger assessment.
 
 ## Reproduce
 
